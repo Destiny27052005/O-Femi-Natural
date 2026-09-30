@@ -175,7 +175,7 @@ export default function Shop() {
   };
 
   return (
-    <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-6 space-y-8">
+    <div className="max-w-350 mx-auto px-4 md:px-8 py-6 space-y-8">
       {/* Top Banner */}
       <div className="relative overflow-hidden rounded-3xl bg-[#ebf5ed] border border-[#d6ebd9] p-6 md:p-8 flex flex-col md:flex-row items-center justify-between">
         <div className="space-y-4 max-w-xl z-10">
@@ -418,7 +418,7 @@ export default function Shop() {
           </div>
 
           {/* Cart Items List */}
-          <div className="divide-y divide-gray-100 max-h-[340px] overflow-y-auto my-2">
+          <div className="divide-y divide-gray-100 max-h-85 overflow-y-auto my-2">
             {items.length === 0 ? (
               <div className="py-10 text-center text-gray-400 text-xs">
                 Your cart is empty.
