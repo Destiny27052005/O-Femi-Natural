@@ -111,7 +111,7 @@ export default function Home() {
   };
 
   return (
-    <main className="max-w-[1400px] mx-auto px-4 md:px-8 py-6 space-y-12">
+    <main className="max-w-350 mx-auto px-4 md:px-8 py-6 space-y-12">
       {/* 2-Column Catalog & Cart Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
@@ -206,7 +206,7 @@ export default function Home() {
           </div>
 
           {/* Cart Item List */}
-          <div className="divide-y divide-gray-100 max-h-[380px] overflow-y-auto my-2">
+          <div className="divide-y divide-gray-100 max-h-95 overflow-y-auto my-2">
             {items.length === 0 ? (
               <div className="py-12 text-center text-gray-400 text-sm">
                 Your cart is empty.
@@ -301,7 +301,7 @@ export default function Home() {
               <ShoppingCart size={20} />
             </div>
             <h4 className="font-semibold text-sm text-gray-900">1. Choose Products</h4>
-            <p className="text-xs text-gray-500 max-w-[180px]">
+            <p className="text-xs text-gray-500 max-w-45">
               Browse and add your favorite items to the cart.
             </p>
           </div>
@@ -311,7 +311,7 @@ export default function Home() {
               <PhoneCall size={20} />
             </div>
             <h4 className="font-semibold text-sm text-gray-900">2. Send Order on WhatsApp</h4>
-            <p className="text-xs text-gray-500 max-w-[180px]">
+            <p className="text-xs text-gray-500 max-w-45">
               Click the button and your order will be forwarded to the vendor.
             </p>
           </div>
@@ -321,7 +321,7 @@ export default function Home() {
               <Store size={20} />
             </div>
             <h4 className="font-semibold text-sm text-gray-900">3. Vendor Confirms</h4>
-            <p className="text-xs text-gray-500 max-w-[180px]">
+            <p className="text-xs text-gray-500 max-w-45">
               The vendor will reply with availability and total.
             </p>
           </div>
@@ -331,7 +331,7 @@ export default function Home() {
               <Package size={20} />
             </div>
             <h4 className="font-semibold text-sm text-gray-900">4. Get Your Order</h4>
-            <p className="text-xs text-gray-500 max-w-[180px]">
+            <p className="text-xs text-gray-500 max-w-45">
               Confirm and collect your order at your convenience.
             </p>
           </div>
