@@ -100,9 +100,9 @@ export default function Home() {
 
     let message = `*New Order from FreshBites:*\n\n`;
     items.forEach((item) => {
-      message += `• ${item.title} x ${item.quantity} = ₹${item.price * item.quantity}\n`;
+      message += `• ${item.title} x ${item.quantity} = ₦${item.price * item.quantity}\n`;
     });
-    message += `\n*Total Amount:* ₹${subtotal}\n`;
+    message += `\n*Total Amount:* ₦${subtotal}\n`;
     message += `*Delivery:* Free\n\nPlease confirm my order!`;
 
     const encodedMessage = encodeURI(message);
@@ -180,7 +180,7 @@ export default function Home() {
                   <h3 className="font-semibold text-gray-900 text-sm leading-snug line-clamp-2">
                     {prod.title}
                   </h3>
-                  <p className="text-gray-900 font-bold mt-1 text-sm">₹{prod.price}</p>
+                  <p className="text-gray-900 font-bold mt-1 text-sm">₦{prod.price}</p>
                 </div>
 
                 <button
@@ -223,7 +223,7 @@ export default function Home() {
                     <p className="text-xs font-medium text-gray-800 truncate">
                       {item.title}
                     </p>
-                    <p className="text-xs text-gray-500 font-semibold mt-0.5">₹{item.price}</p>
+                    <p className="text-xs text-gray-500 font-semibold mt-0.5">₦{item.price}</p>
                     <div className="flex items-center gap-2 mt-1">
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity - 1)}
@@ -248,7 +248,7 @@ export default function Home() {
                       <X size={14} />
                     </button>
                     <span className="text-xs font-bold text-gray-900">
-                      ₹{item.price * item.quantity}
+                      ₦{item.price * item.quantity}
                     </span>
                   </div>
                 </div>
@@ -260,7 +260,7 @@ export default function Home() {
           <div className="border-t border-gray-100 pt-3 space-y-1.5 text-xs text-gray-600">
             <div className="flex justify-between">
               <span>Subtotal</span>
-              <span className="font-semibold text-gray-900">₹{subtotal}</span>
+              <span className="font-semibold text-gray-900">₦{subtotal}</span>
             </div>
             <div className="flex justify-between">
               <span>Delivery</span>
@@ -268,7 +268,7 @@ export default function Home() {
             </div>
             <div className="flex justify-between items-center pt-2 text-sm font-bold text-gray-900 border-t border-gray-100">
               <span>Total</span>
-              <span className="text-base font-extrabold">₹{subtotal}</span>
+              <span className="text-base font-extrabold">₦{subtotal}</span>
             </div>
           </div>
 

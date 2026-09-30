@@ -168,9 +168,9 @@ export default function Shop() {
     if (items.length === 0) return;
     let text = `*New Order from FreshBites:*\n\n`;
     items.forEach((item) => {
-      text += `• ${item.title} x ${item.quantity} = ₹${item.price * item.quantity}\n`;
+      text += `• ${item.title} x ${item.quantity} = ₦${item.price * item.quantity}\n`;
     });
-    text += `\n*Subtotal:* ₹${subtotal}\n*Delivery:* Free\n\nPlease confirm my order!`;
+    text += `\n*Subtotal:* ₦${subtotal}\n*Delivery:* Free\n\nPlease confirm my order!`;
     window.open(`https://wa.me/919999999999?text=${encodeURIComponent(text)}`, "_blank");
   };
 
@@ -275,8 +275,8 @@ export default function Shop() {
                 className="w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#12773c]"
               />
               <div className="flex justify-between items-center text-[11px] text-gray-500 mt-1">
-                <span>₹10</span>
-                <span>₹{maxPrice}</span>
+                <span>₦10</span>
+                <span>₦{maxPrice}</span>
               </div>
             </div>
 
@@ -364,7 +364,7 @@ export default function Shop() {
                     <h3 className="font-semibold text-gray-900 text-xs leading-snug line-clamp-2">
                       {prod.title}
                     </h3>
-                    <p className="font-bold text-gray-900 text-xs mt-0.5">₹{prod.price}</p>
+                    <p className="font-bold text-gray-900 text-xs mt-0.5">₦{prod.price}</p>
 
                     {/* Star Rating */}
                     <div className="flex items-center gap-1 mt-1 text-[11px] text-gray-500">
@@ -435,7 +435,7 @@ export default function Shop() {
                     <p className="text-[11px] font-medium text-gray-800 truncate">
                       {item.title}
                     </p>
-                    <p className="text-[11px] text-gray-500 font-bold">₹{item.price}</p>
+                    <p className="text-[11px] text-gray-500 font-bold">₦{item.price}</p>
                     <div className="flex items-center gap-1.5 mt-1">
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity - 1)}
@@ -460,7 +460,7 @@ export default function Shop() {
                       <Trash2 size={13} />
                     </button>
                     <span className="text-xs font-bold text-gray-900">
-                      ₹{item.price * item.quantity}
+                      ₦{item.price * item.quantity}
                     </span>
                   </div>
                 </div>
@@ -472,11 +472,11 @@ export default function Shop() {
           <div className="border-t border-gray-100 pt-3 space-y-1 text-xs">
             <div className="flex justify-between text-gray-600">
               <span>Subtotal</span>
-              <span className="font-bold text-gray-900">₹{subtotal}</span>
+              <span className="font-bold text-gray-900">₦{subtotal}</span>
             </div>
             <div className="flex justify-between items-center pt-2 font-bold text-gray-900 border-t border-gray-100">
               <span>Total</span>
-              <span className="text-base font-extrabold text-[#11311b]">₹{subtotal}</span>
+              <span className="text-base font-extrabold text-[#11311b]">₦{subtotal}</span>
             </div>
           </div>
 
