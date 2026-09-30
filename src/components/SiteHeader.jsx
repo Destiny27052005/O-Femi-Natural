@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Leaf, Search, ShoppingCart } from "lucide-react";
+import { Leaf, Menu, Search, ShoppingCart } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 const links = [
@@ -22,7 +22,7 @@ function SiteHeader() {
 
     return (
         <div>
-            <header className="flex justify-between px-12 py-6 border-b border-b-gray-200">
+            <header className="flex justify-between place-items-center px-12 py-6 border-b border-b-gray-200">
                 <div className="flex gap-1 place-items-center">
                     <Leaf className="h-10 w-10 text-green-600" />
                     <div>
@@ -54,6 +54,7 @@ function SiteHeader() {
                         <span className="text-white flex w-4 h-4 place-items-center justify-center text-center bg-green-600 rounded-[50%] absolute -top-1 right-0 z-50">3</span>
                     </div>
                 </div>
+                <Menu  className="md:hidden"/>
             </header>
         </div>
     );
