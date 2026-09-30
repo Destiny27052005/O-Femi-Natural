@@ -11,7 +11,7 @@ import {
 
 export default function About() {
   return (
-    <main className="max-w-[1400px] mx-auto px-4 md:px-12 py-8 space-y-12">
+    <main className="max-w-350 mx-auto px-4 md:px-12 py-8 space-y-12">
       {/* 1. Hero Section */}
       <section className="relative overflow-hidden rounded-3xl bg-[#eaf4ec] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between border border-[#d6ebd9]">
         <div className="space-y-4 max-w-xl z-10">
