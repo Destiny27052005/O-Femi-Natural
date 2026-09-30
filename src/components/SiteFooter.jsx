@@ -16,7 +16,7 @@ function SiteFooter() {
 
   return (
     <footer className="w-full bg-[#1b3b36] text-[#e0ece9] py-5 px-6 md:px-12 border-t border-[#254b45]">
-      <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="max-w-350 mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         
         {/* Brand identity */}
         <div className="flex items-center gap-3">

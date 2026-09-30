@@ -19,7 +19,7 @@ function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
-      <div className="max-w-[1400px] mx-auto flex items-center justify-between px-6 md:px-12 py-3.5">
+      <div className="max-w-350 mx-auto flex items-center justify-between px-6 md:px-12 py-3.5">
         
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2.5">
@@ -42,7 +42,7 @@ function SiteHeader() {
               className={({ isActive }) =>
                 `relative py-1 text-sm font-semibold transition-colors ${
                   isActive
-                    ? "text-[#12773c] after:content-[''] after:absolute after:left-0 after:bottom-[-16px] after:w-full after:h-[2.5px] after:bg-[#12773c] after:rounded-full"
+                    ? "text-[#12773c] after:content-[''] after:absolute after:left-0 after:-bottom-4 after:w-full after:h-[2.5px] after:bg-[#12773c] after:rounded-full"
                     : "text-gray-600 hover:text-gray-900"
                 }`
               }
