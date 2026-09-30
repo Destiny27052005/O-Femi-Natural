@@ -476,7 +476,7 @@ export default function Shop() {
             </div>
             <div className="flex justify-between items-center pt-2 font-bold text-gray-900 border-t border-gray-100">
               <span>Total</span>
-              <span className="text-base font-extrabold text-[#11311b]">₦{subtotal}</span>
+              <span className="text-base font-extrabold text-[#11311b]">₹{subtotal}</span>
             </div>
           </div>
 
