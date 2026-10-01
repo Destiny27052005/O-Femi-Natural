@@ -23,7 +23,7 @@ const products = [
     reviews: 142,
     badge: "Best Seller",
     inStock: true,
-    img: "https://images.unsplash.com/photo-1621996346565-e3d5d6281729?auto=format&fit=crop&w=500&q=80"
+    img: "https://fabwoman.ng/wp-content/uploads/2018/01/dodo-ikire.jpg"
   },
   {
     id: "p2",
