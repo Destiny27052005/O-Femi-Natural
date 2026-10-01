@@ -108,12 +108,12 @@ const productsData = [
   }
 ];
 
-const categoryList = [
-  { id: "all", label: "All Products", count: 24, icon: Layers },
-  { id: "snacks", label: "Snacks", count: 8, icon: Cookie },
-  { id: "beverages", label: "Beverages", count: 5, icon: Coffee },
-  { id: "bakery", label: "Bakery", count: 6, icon: Croissant },
-  { id: "combo packs", label: "Combo Packs", count: 5, icon: Package }
+const categoryTemplates = [
+  { id: "all", label: "All Products", icon: Layers },
+  { id: "snacks", label: "Snacks", icon: Cookie },
+  { id: "beverages", label: "Beverages", icon: Coffee },
+  { id: "bakery", label: "Bakery", icon: Croissant },
+  { id: "combo packs", label: "Combo Packs", icon: Package }
 ];
 
 export default function Shop() {
@@ -123,6 +123,17 @@ export default function Shop() {
   const [outOfStockOnly, setOutOfStockOnly] = useState(false);
   const [sortBy, setSortBy] = useState("popularity");
   const [itemQuantities, setItemQuantities] = useState({});
+
+  // Dynamic category counts calculated directly from productsData
+  const categoryList = useMemo(() => {
+    return categoryTemplates.map((cat) => {
+      const count =
+        cat.id === "all"
+          ? productsData.length
+          : productsData.filter((p) => p.category.toLowerCase() === cat.id.toLowerCase()).length;
+      return { ...cat, count };
+    });
+  }, []);
 
   // Zustand Store
   const items = useCartStore((state) => state.items);
@@ -134,7 +145,6 @@ export default function Shop() {
 
   const subtotal = getTotalPrice();
 
-  // Local quantity helper for product cards before adding to cart
   const handleQuantityChange = (id, delta) => {
     setItemQuantities((prev) => {
       const current = prev[id] || 1;
@@ -150,7 +160,6 @@ export default function Shop() {
     }
   };
 
-  // Filtered & Sorted items
   const filteredProducts = useMemo(() => {
     return productsData
       .filter((item) => {
@@ -180,9 +189,8 @@ export default function Shop() {
 
   return (
     <div className="max-w-350 mx-auto px-4 md:px-8 py-6 space-y-8">
-      {/* Top Banner with /hero.jpg and Concealing Fade Mask */}
+      {/* Top Banner */}
       <div className="relative overflow-hidden rounded-3xl bg-[#ebf5ed] border border-[#d6ebd9] min-h-65 flex items-center">
-        {/* Left Content Area */}
         <div className="relative z-10 p-6 md:p-8 max-w-sm sm:max-w-md space-y-3">
           <h1 className="text-2xl md:text-3xl font-extrabold text-[#11311b] tracking-tight">
             Shop Our Fresh & Tasty Products
@@ -221,7 +229,6 @@ export default function Shop() {
           </div>
         </div>
 
-        {/* Right Hero Image with Soft Mask covering the graphic text */}
         <div className="absolute right-0 top-0 bottom-0 w-full md:w-3/5 overflow-hidden pointer-events-none">
           <img
             src="/hero.png"
@@ -234,10 +241,8 @@ export default function Shop() {
 
       {/* Main 3-Column Content Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-        
         {/* Left Column: Filters Sidebar */}
         <aside className="lg:col-span-2 space-y-6">
-          {/* Categories */}
           <div>
             <h3 className="font-bold text-sm text-gray-900 mb-3">Categories</h3>
             <div className="space-y-1">
@@ -268,7 +273,6 @@ export default function Shop() {
           <div className="border-t border-gray-100 pt-5 space-y-5">
             <h3 className="font-bold text-sm text-gray-900">Filters</h3>
 
-            {/* Price Range */}
             <div>
               <div className="flex justify-between items-center text-xs text-gray-700 font-medium mb-2">
                 <span>Price Range</span>
@@ -288,7 +292,6 @@ export default function Shop() {
               </div>
             </div>
 
-            {/* Availability */}
             <div className="space-y-2">
               <h4 className="text-xs font-semibold text-gray-800">Availability</h4>
               <label className="flex items-center gap-2 text-xs text-gray-600 cursor-pointer">
@@ -323,7 +326,6 @@ export default function Shop() {
               </span>
             </h2>
 
-            {/* Sort Dropdown */}
             <div className="relative">
               <select
                 value={sortBy}
@@ -351,7 +353,6 @@ export default function Shop() {
                   className="bg-white border border-gray-100 rounded-2xl p-2.5 flex flex-col justify-between hover:shadow-md transition-shadow group relative"
                 >
                   <div>
-                    {/* Badge */}
                     <div className="relative mb-2.5">
                       {prod.badge && (
                         <span
@@ -376,7 +377,6 @@ export default function Shop() {
                       ₦{prod.price.toLocaleString()}
                     </p>
 
-                    {/* Star Rating */}
                     <div className="flex items-center gap-1 mt-1 text-[11px] text-gray-500">
                       <Star size={12} className="text-amber-400 fill-amber-400" />
                       <span className="font-semibold text-gray-700">{prod.rating}</span>
@@ -385,7 +385,6 @@ export default function Shop() {
                   </div>
 
                   <div className="mt-2.5 space-y-2">
-                    {/* Incrementor Buttons */}
                     <div className="flex items-center justify-between border border-gray-200 rounded-lg px-2 py-0.5 text-xs">
                       <button
                         onClick={() => handleQuantityChange(prod.id, -1)}
@@ -402,7 +401,6 @@ export default function Shop() {
                       </button>
                     </div>
 
-                    {/* Add to Cart CTA */}
                     <button
                       onClick={() => handleAddWithQty(prod)}
                       className="w-full bg-[#12773c] hover:bg-[#0e5e30] text-white py-1.5 rounded-xl text-[11px] font-semibold flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
@@ -427,7 +425,6 @@ export default function Shop() {
             </button>
           </div>
 
-          {/* Cart Items List */}
           <div className="divide-y divide-gray-100 max-h-85 overflow-y-auto my-2">
             {items.length === 0 ? (
               <div className="py-10 text-center text-gray-400 text-xs">
@@ -480,7 +477,6 @@ export default function Shop() {
             )}
           </div>
 
-          {/* Pricing Totals */}
           <div className="border-t border-gray-100 pt-3 space-y-1 text-xs">
             <div className="flex justify-between text-gray-600">
               <span>Subtotal</span>
@@ -494,7 +490,6 @@ export default function Shop() {
             </div>
           </div>
 
-          {/* WhatsApp Order CTA */}
           <button
             onClick={handleWhatsAppOrder}
             disabled={items.length === 0}
