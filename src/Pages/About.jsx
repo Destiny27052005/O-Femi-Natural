@@ -13,28 +13,29 @@ export default function About() {
   return (
     <main className="max-w-350 mx-auto px-4 md:px-12 py-8 space-y-12">
       {/* 1. Hero Section */}
-      <section className="relative overflow-hidden rounded-3xl bg-[#eaf4ec] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between border border-[#d6ebd9]">
-        <div className="space-y-4 max-w-xl z-10">
+      <section className="relative overflow-hidden rounded-3xl bg-[#eaf4ec] min-h-70 flex items-center border border-[#d6ebd9]">
+        {/* Left Content Area */}
+        <div className="relative z-10 p-6 md:p-10 max-w-sm sm:max-w-md space-y-4">
           <span className="inline-block bg-[#d8ecd8] text-[#12773c] text-xs font-semibold px-3 py-1 rounded-full">
             About Us
           </span>
           <h1 className="text-3xl md:text-5xl font-extrabold text-[#11311b] tracking-tight leading-tight">
             FreshBites – Good Food, <br /> Happy You
           </h1>
-          <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-            We are a small, passionate business dedicated to bringing you fresh, high-quality snacks and beverages at the best prices. Our goal is simple — to make your everyday moments tastier, healthier and happier.
+          <p className="text-gray-600 text-sm leading-relaxed">
+            We are a small, passionate business dedicated to bringing you fresh, high-quality Nigerian snacks and beverages at pocket-friendly prices. Our goal is simple — to make your everyday moments tastier, healthier, and happier.
           </p>
         </div>
 
-        <div className="relative mt-8 md:mt-0 flex items-center justify-center">
+        {/* Hero Image positioned to display only the food items on the right */}
+        <div className="absolute right-0 top-0 bottom-0 w-full md:w-3/5 overflow-hidden pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=700&q=80"
-            alt="Fresh cookies and juice"
-            className="w-72 md:w-96 h-48 md:h-60 object-cover rounded-3xl shadow-sm"
+            src="/hero.png"
+            alt="Fresh cookies and snacks"
+            className="w-full h-full object-cover object-right"
           />
-          <div className="absolute -top-3 -right-3 sm:right-2 font-serif italic text-xs md:text-sm text-[#12773c] select-none text-right">
-            ` Real Snacks <br /> - Real Happiness 💚
-          </div>
+          {/* Soft fade mask that completely covers the left graphic text */}
+          <div className="absolute inset-0 bg-linear-to-r from-[#eaf4ec] via-[#eaf4ec]/70 to-transparent w-3/5" />
         </div>
       </section>
 
@@ -46,7 +47,7 @@ export default function About() {
           </div>
           <div>
             <h2 className="text-xs font-bold text-gray-900">Fresh & Quality Products</h2>
-            <p className="text-[11px] text-gray-500 mt-0.5">We source the best ingredients for great taste and nutrition.</p>
+            <p className="text-[11px] text-gray-500 mt-0.5">We source the best local ingredients for authentic Nigerian taste.</p>
           </div>
         </div>
 
@@ -56,7 +57,7 @@ export default function About() {
           </div>
           <div>
             <h2 className="text-xs font-bold text-gray-900">Fast & Reliable Service</h2>
-            <p className="text-[11px] text-gray-500 mt-0.5">Your orders are processed quickly and delivered with care.</p>
+            <p className="text-[11px] text-gray-500 mt-0.5">Orders are processed quickly and delivered safely to your doorstep.</p>
           </div>
         </div>
 
@@ -66,7 +67,7 @@ export default function About() {
           </div>
           <div>
             <h2 className="text-xs font-bold text-gray-900">Affordable Prices</h2>
-            <p className="text-[11px] text-gray-500 mt-0.5">Premium quality snacks at pocket-friendly prices.</p>
+            <p className="text-[11px] text-gray-500 mt-0.5">Premium quality snacks at fair, pocket-friendly Naira prices.</p>
           </div>
         </div>
 
@@ -76,7 +77,7 @@ export default function About() {
           </div>
           <div>
             <h2 className="text-xs font-bold text-gray-900">Customer Satisfaction</h2>
-            <p className="text-[11px] text-gray-500 mt-0.5">Your happiness is our top priority.</p>
+            <p className="text-[11px] text-gray-500 mt-0.5">Your happiness is our top priority with every bite.</p>
           </div>
         </div>
       </section>
@@ -100,10 +101,10 @@ export default function About() {
           </h2>
           <div className="space-y-3 text-xs md:text-sm text-gray-600 leading-relaxed">
             <p>
-              FreshBites started with a simple idea — to make delicious snacks and beverages easily accessible to everyone. What began as a small local venture is now a trusted source for quality snacks, loved by students, professionals and families alike.
+              FreshBites started with a simple vision — to make delicious, freshly prepared Nigerian snacks and beverages accessible to everyone. What began as a neighborhood kitchen in Lagos is now a reliable snack haven loved by students, busy professionals, and families.
             </p>
             <p>
-              We believe that good food brings people together, and we're here to make those moments even better.
+              We believe great food brings people together, and we are committed to elevating everyday snacking across Nigeria.
             </p>
           </div>
         </div>
@@ -116,7 +117,7 @@ export default function About() {
             Our Mission & Values
           </h2>
           <p className="text-xs text-gray-600">
-            We're on a mission to deliver fresh, tasty and affordable snacks, while creating joy in every bite. Our values guide everything we do:
+            We are on a mission to deliver fresh, tasty, and affordable treats while creating smiles in every bite:
           </p>
         </div>
 
@@ -126,7 +127,7 @@ export default function About() {
               <Leaf size={20} />
             </div>
             <h3 className="text-xs font-bold text-gray-900">Quality</h3>
-            <p className="text-[11px] text-gray-500">Only the best for you.</p>
+            <p className="text-[11px] text-gray-500">Only the best ingredients for you.</p>
           </div>
 
           <div className="flex flex-col items-center space-y-2">
@@ -134,7 +135,7 @@ export default function About() {
               <Users size={20} />
             </div>
             <h3 className="text-xs font-bold text-gray-900">Community</h3>
-            <p className="text-[11px] text-gray-500">Supporting local & growing together.</p>
+            <p className="text-[11px] text-gray-500">Supporting local farmers & producers.</p>
           </div>
 
           <div className="flex flex-col items-center space-y-2">

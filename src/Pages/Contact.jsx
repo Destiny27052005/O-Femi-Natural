@@ -32,37 +32,37 @@ export default function Contact() {
 
   const handleWhatsAppChat = () => {
     const message = encodeURIComponent(
-      "Hello FreshBites team! I have a question regarding your products/services."
+      "Hello FreshBites Nigeria team! I have an inquiry regarding your products/services."
     );
-    window.open(`https://wa.me/919876543210?text=${message}`, "_blank");
+    window.open(`https://wa.me/2348012345678?text=${message}`, "_blank");
   };
 
   return (
     <main className="max-w-350 mx-auto px-4 md:px-12 py-8 space-y-10">
       {/* 1. Hero Section */}
-      <section className="relative overflow-hidden rounded-3xl bg-[#eaf4ec] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between border border-[#d6ebd9]">
-        <div className="space-y-4 max-w-xl z-10">
+      <section className="relative overflow-hidden rounded-3xl bg-[#eaf4ec] min-h-70 flex items-center border border-[#d6ebd9]">
+        {/* Left Content Area */}
+        <div className="relative z-10 p-6 md:p-10 max-w-sm sm:max-w-md space-y-4">
           <span className="inline-block bg-[#d8ecd8] text-[#12773c] text-xs font-semibold px-3 py-1 rounded-full">
             Get in Touch
           </span>
           <h1 className="text-3xl md:text-5xl font-extrabold text-[#11311b] tracking-tight">
             Contact Us
           </h1>
-          <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+          <p className="text-gray-600 text-sm leading-relaxed">
             We'd love to hear from you! Whether you have a question, feedback, or
-            need support, we're just a message away.
+            need support with your snack orders, we're just a message away.
           </p>
         </div>
 
-        <div className="relative mt-8 md:mt-0 flex items-center justify-center">
+        {/* Hero image positioned right with fade mask concealing graphic text */}
+        <div className="absolute right-0 top-0 bottom-0 w-full md:w-3/5 overflow-hidden pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=700&q=80"
+            src="/hero.png"
             alt="Cookies and Snacks"
-            className="w-72 md:w-96 h-48 md:h-60 object-cover rounded-3xl shadow-sm"
+            className="w-full h-full object-cover object-right"
           />
-          <div className="absolute -top-3 -left-4 sm:-left-6 font-serif italic text-xs md:text-sm text-[#12773c] select-none text-left">
-            ` Your happiness <br /> is our priority 💚
-          </div>
+          <div className="absolute inset-0 bg-linear-to-r from-[#eaf4ec] via-[#eaf4ec]/70 to-transparent w-3/5" />
         </div>
       </section>
 
@@ -105,10 +105,10 @@ export default function Contact() {
               <div>
                 <h3 className="text-xs font-bold text-gray-900">Email</h3>
                 <a
-                  href="mailto:support@freshbites.in"
+                  href="mailto:support@freshbites.ng"
                   className="text-xs font-medium text-[#12773c] hover:underline"
                 >
-                  support@freshbites.in
+                  support@freshbites.ng
                 </a>
                 <p className="text-[11px] text-gray-400 mt-0.5">We'll reply within 24 hours.</p>
               </div>
@@ -122,12 +122,12 @@ export default function Contact() {
               <div>
                 <h3 className="text-xs font-bold text-gray-900">Phone</h3>
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+2348012345678"
                   className="text-xs font-medium text-gray-800 hover:text-black"
                 >
-                  +91 98765 43210
+                  +234 801 234 5678
                 </a>
-                <p className="text-[11px] text-gray-400 mt-0.5">Mon – Sat, 9:00 AM – 6:00 PM</p>
+                <p className="text-[11px] text-gray-400 mt-0.5">Mon – Sat, 8:00 AM – 7:00 PM (WAT)</p>
               </div>
             </div>
 
@@ -139,8 +139,8 @@ export default function Contact() {
               <div>
                 <h3 className="text-xs font-bold text-gray-900">Our Address</h3>
                 <p className="text-xs text-gray-600 mt-0.5 leading-relaxed">
-                  123 Green Lane, Food Street, <br />
-                  Bengaluru, Karnataka – 560001
+                  14 Admiralty Way, Lekki Phase 1, <br />
+                  Lagos, Nigeria
                 </p>
               </div>
             </div>
@@ -148,7 +148,6 @@ export default function Contact() {
 
           {/* Map Preview Banner */}
           <div className="relative rounded-2xl overflow-hidden border border-gray-100 bg-[#e7f0ea] h-36 flex items-center justify-center">
-            {/* Map styling mock backdrop */}
             <div className="absolute inset-0 opacity-40 bg-[radial-gradient(#12773c_1px,transparent_1px)] bg-size-[16px_16px]"></div>
             
             <div className="relative z-10 bg-white/95 backdrop-blur-xs rounded-xl p-3 shadow-md flex items-center gap-3">
@@ -156,10 +155,10 @@ export default function Contact() {
                 <MapPin size={16} />
               </div>
               <div>
-                <h4 className="text-xs font-bold text-gray-900">FreshBites</h4>
-                <p className="text-[10px] text-gray-500">Bengaluru, Karnataka</p>
+                <h4 className="text-xs font-bold text-gray-900">FreshBites Lagos</h4>
+                <p className="text-[10px] text-gray-500">Lekki Phase 1, Lagos</p>
                 <a
-                  href="https://maps.google.com"
+                  href="https://maps.google.com/?q=Lekki+Phase+1+Lagos+Nigeria"
                   target="_blank"
                   rel="noreferrer"
                   className="text-[10px] font-semibold text-[#12773c] inline-flex items-center gap-1 mt-0.5 hover:underline"
@@ -176,7 +175,7 @@ export default function Contact() {
           <div>
             <h2 className="text-lg font-bold text-gray-900">Send Us a Message</h2>
             <p className="text-xs text-gray-500 mt-1">
-              Fill out the form below and we'll get back to you as soon as possible.
+              Fill out the form below and our team will get back to you promptly.
             </p>
           </div>
 
@@ -193,7 +192,7 @@ export default function Contact() {
                     name="fullName"
                     value={formData.fullName}
                     onChange={handleChange}
-                    placeholder="Your name"
+                    placeholder="e.g. Babatunde Adeleke"
                     className="w-full text-xs outline-none bg-transparent placeholder-gray-400"
                   />
                 </div>
@@ -210,7 +209,7 @@ export default function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="yourname@example.com"
+                    placeholder="yourname@gmail.com"
                     className="w-full text-xs outline-none bg-transparent placeholder-gray-400"
                   />
                 </div>
@@ -230,9 +229,9 @@ export default function Contact() {
                   className="w-full text-xs outline-none bg-transparent appearance-none cursor-pointer text-gray-700"
                 >
                   <option value="" disabled>Select a topic</option>
-                  <option value="order">Order Inquiry</option>
+                  <option value="order">Order & Delivery Inquiry</option>
                   <option value="feedback">Product Feedback</option>
-                  <option value="business">Bulk / Business Order</option>
+                  <option value="events">Bulk Orders (Events & Parties)</option>
                   <option value="support">General Support</option>
                 </select>
                 <ChevronDown size={14} className="pointer-events-none absolute right-3.5 text-gray-400" />
@@ -250,7 +249,7 @@ export default function Contact() {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Write your message here..."
+                  placeholder="Tell us what you need or give feedback on our snacks..."
                   className="w-full text-xs outline-none bg-transparent placeholder-gray-400 resize-none"
                 />
               </div>
@@ -273,7 +272,7 @@ export default function Contact() {
               </div>
               <div>
                 <h4 className="text-xs font-bold text-gray-900">Prefer WhatsApp?</h4>
-                <p className="text-[11px] text-gray-500">For quicker support, chat with us on WhatsApp.</p>
+                <p className="text-[11px] text-gray-500">For instant responses, chat with our Lagos hub on WhatsApp.</p>
               </div>
             </div>
             <button
